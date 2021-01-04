@@ -42,7 +42,7 @@
             </div>
           </div>
           <div style="font-size: 9px;" class="info w-full flex justify-between font-bold">
-            <div class="left bg-yellow-200 rounded px-0.5">{{ order.remaining }} left</div>
+            <div class="left bg-yellow-200 rounded-md px-1">{{ order.remaining }} left</div>
             <div class="distance">{{ order.distance }}km</div>
           </div>
           <div class="price font-bold self-start">${{ order.price.toFixed(2) }}</div>
@@ -52,6 +52,15 @@
 
     <div class="stores">
       <div class="stores-header font-bold">Stores Near You</div>
+      <div class="stores-wrapper whitespace-nowrap overflow-scroll">
+        <div v-for="store in stores" :key="store.address" class="store p-1 m-2 inline-flex w-1/3 bg-white flex-col justify-center items-center">
+          <div style="height: 70px;" class="image w-1/2">
+            <img class="w-full" :src="`/stores/${store.url}`" alt="" />
+          </div>
+          <div style="font-size: 9px;" class="distance font-bold self-start">{{ store.distance }}km</div>
+          <div style="font-size: 11px;" class="address h-8 font-bold self-start whitespace-pre-wrap">{{ store.address }}</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -113,6 +122,33 @@ export default {
           remaining: 100,
           distance: 1120.89,
           price: 540,
+        },
+      ],
+      stores: [
+        {
+          url: "lion.jpg",
+          distance: 2.7,
+          address: "White Shop Test, Q7, HCM",
+        },
+        {
+          url: "bee.png",
+          distance: 2.7,
+          address: "Bee Knights Test, Q10, HCM",
+        },
+        {
+          url: "bee.png",
+          distance: 2.7,
+          address: "Bee Knights Test, Q11, HCM",
+        },
+        {
+          url: "eye.jpg",
+          distance: 2.7,
+          address: "Eye, Q7, HCM",
+        },
+        {
+          url: "eye.jpg",
+          distance: 2.7,
+          address: "Eye, Q12, HCM",
         },
       ],
     };
