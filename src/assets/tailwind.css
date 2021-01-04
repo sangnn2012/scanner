@@ -1,0 +1,23 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.home .el-input__inner {
+    border-radius: 20px;
+}
+
+.home .el-input__suffix {
+    right: -3px !important;
+}
+
+.home .el-carousel__container {
+    height: 165px;
+}
+
+.home .el-carousel__button {
+    width: 10px;
+    height: 10px;
+    border-radius: 45px;
+}
